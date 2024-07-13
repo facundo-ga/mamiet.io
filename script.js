@@ -145,7 +145,7 @@ class World {
       vertexShader: document.getElementById("vertexShader").textContent,
       uniforms: {
         uTime: { value: 0 },
-        uSize: { value: 0.2 },
+        uSize: { value: 0.4 },
         uTex: {
           value: new THREE.TextureLoader().load(
           "img/love.png") } },
@@ -159,7 +159,7 @@ class World {
     const count = this.parameters.count;
     const scales = new Float32Array(count * 1);
     const colors = new Float32Array(count * 3);
-    const speeds = new Float32Array(count);
+    const speeds = new Float32Array(count * 6);
     const randoms = new Float32Array(count);
     const randoms1 = new Float32Array(count);
     const colorChoices = [
