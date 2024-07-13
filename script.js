@@ -1,5 +1,3 @@
-/* Poly Heart model by Quaternius [CC0] (https://creativecommons.org/publicdomain/zero/1.0/) via Poly Pizza (https://poly.pizza/m/1yCRUwFnwX)
- */
 
 import * as THREE from "https://cdn.skypack.dev/three@0.135.0";
 import { gsap } from "https://cdn.skypack.dev/gsap@3.8.0";
@@ -150,7 +148,7 @@ class World {
         uSize: { value: 0.2 },
         uTex: {
           value: new THREE.TextureLoader().load(
-          "https://assets.codepen.io/74321/heart.png") } },
+          "img/love.png") } },
 
 
 
@@ -158,7 +156,7 @@ class World {
       blending: THREE.AdditiveBlending,
       transparent: true });
 
-    const count = this.parameters.count; //2000
+    const count = this.parameters.count;
     const scales = new Float32Array(count * 1);
     const colors = new Float32Array(count * 3);
     const speeds = new Float32Array(count);
@@ -225,12 +223,12 @@ class World {
   }
   async addModel() {
     this.model = await this.loadObj(
-    "https://assets.codepen.io/74321/heart.glb");
+    "img/love.png");
 
     this.model.scale.set(0.01, 0.01, 0.01);
     this.model.material = new THREE.MeshMatcapMaterial({
       matcap: this.textureLoader.load(
-      "https://assets.codepen.io/74321/3.png",
+      "",
       () => {
         gsap.to(this.model.scale, {
           x: 0.35,
@@ -296,7 +294,7 @@ class World {
         this.sound.setVolume(0.5);
         this.sound.play();
         this.analyser = new THREE.AudioAnalyser(this.sound, 32);
-        // get the average frequency of the sound
+     
         const data = this.analyser.getAverageFrequency();
         this.isRunning = true;
         this.t0 = this.time.elapsed;
