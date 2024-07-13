@@ -287,7 +287,7 @@ class World {
       this.sound = new THREE.Audio(listener);
       const audioLoader = new THREE.AudioLoader();
       audioLoader.load(
-      "https://youtu.be/YkVbgpXXR0M?si=klwqj9xTcZt-K_mE",
+      "mus/1.mp3",
       buffer => {
         this.sound.setBuffer(buffer);
         this.sound.setLoop(false);
